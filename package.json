@@ -1,0 +1,12 @@
+{
+  "name": "react-redux-demo",
+  "version": "1.0.0",
+  "description": "this's a small demo for react-redux-webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --hot --inline --progress --colors --devtool cheap-module-eval-source-map"
+  },
+  "author": "llw",
+  "license": "ISC"
+}
