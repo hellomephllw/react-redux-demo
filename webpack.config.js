@@ -1,6 +1,6 @@
-const rootPath = __dirname;
-
+'use strict';
 const
+    rootPath = __dirname,
     webpack = require('webpack'),
     UglifyJsPlugin = webpack.optimize.UglifyJsPlugin,
     HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,7 +9,7 @@ const
 module.exports = {
     //入口文件路径配置
     entry: {
-        main: `${rootPath}/src/scripts/main.js`
+        index: `${rootPath}/src/index.js`
     },
     //输出文件路径配置
     output: {
@@ -24,27 +24,27 @@ module.exports = {
             {
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loader: 'babel'
             },
             //image加载器
             {
                 test: /\.(png|jp[e]?g|gif)$/,
-                loader: 'url-loader?limit=10240&name=images/[name].[hash:5].[ext]'
+                loader: 'url?limit=10240&name=images/[name].[hash:5].[ext]'
             },
             //font加载器
             {
                 test: /\.(woff|svg|eot|ttf)$/,
-                loader: 'url-loader?limit=10240&name=fonts/[name].[hash:5].[ext]'
+                loader: 'url?limit=10240&name=fonts/[name].[hash:5].[ext]'
             },
             //css加载器
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                loader: 'style!css'
             },
             //sass加载器
             {
                 test: /\.scss$/,
-                loader: 'style-loader!css-loader!sass-loader?sourceMap'
+                loader: 'style!css!sass?sourceMap'
             }
         ]
     },
@@ -55,13 +55,14 @@ module.exports = {
             compress: {
                 warnings: false
             },
-            except: ['$super', '$', 'exports', 'require']
+            except: ['$', 'd3', 'exports', 'require']
         }),
         //编译html
         new HtmlWebpackPlugin({
-            template: `${rootPath}/src/views/entry.html`,//指定视图
+            template: `${rootPath}/src/index.html`,//指定视图
+            filename: `${rootPath}/assets/index.html`,//指定输出位置
             hash: true,
-            chunks: ['main']//为视图指定js和css，名字在entry中选一个或多个
+            chunks: ['index']//为视图指定js和css，名字在entry中选一个或多个
         })
     ]
 };

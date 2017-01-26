@@ -8,5 +8,11 @@
     "dev": "webpack-dev-server --hot --inline --progress --colors --devtool cheap-module-eval-source-map"
   },
   "author": "llw",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "redux": "^3.6.0"
+  }
 }
