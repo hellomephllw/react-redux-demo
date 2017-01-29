@@ -18,7 +18,9 @@ module.exports = {
         publicPath: "/assets/",
         filename: '[name].js'
     },
-    // devtool: 'cheap-module-eval-source-map',
+    //SourceMap配置
+    devtool: 'cheap-module-eval-source-map',
+    //
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
@@ -29,7 +31,7 @@ module.exports = {
             {
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
-                loaders: ['react-hot', 'babel']
+                loader: 'babel'
             },
             //image加载器
             {
@@ -66,7 +68,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: `${rootPath}/src/index.html`,//指定视图
             filename: `${rootPath}/assets/index.html`,//指定输出位置
-            // hash: true,
+            hash: true,
             chunks: ['index']//为视图指定js和css，名字在entry中选一个或多个
         }),
         new HotModuleReplacementPlugin()
