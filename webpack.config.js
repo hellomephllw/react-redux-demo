@@ -20,7 +20,7 @@ module.exports = {
     },
     //SourceMap配置
     devtool: 'cheap-module-eval-source-map',
-    //
+    //require引用路径配置
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
@@ -62,7 +62,7 @@ module.exports = {
         //     compress: {
         //         warnings: false
         //     },
-        //     except: ['$', 'd3', 'exports', 'require']
+        //     except: ['$', 'jQuery', 'd3', 'exports', 'require']
         // }),
         //编译html
         new HtmlWebpackPlugin({
@@ -71,6 +71,7 @@ module.exports = {
             hash: true,
             chunks: ['index']//为视图指定js和css，名字在entry中选一个或多个
         }),
+        //支持hmr
         new HotModuleReplacementPlugin()
     ]
 };
