@@ -1,0 +1,17 @@
+@import '../../common/css/normalize.css';
+@import '../../common/css/variables';
+@import '../../common/css/utilities';
+
+@import '../../common/css/bootstrap.css';
+@import '../../common/css/bootstrap-theme.css';
+
+body {
+    font: #{$fontSizeDefault}/#{$lineHeightRatio} $fontFamily;
+    color: #000;
+    background: #000;
+}
+
+.login {
+    background: url('../../images/home-background.jpeg') no-repeat;
+    background-size: 100% 100%;
+}

@@ -19,7 +19,8 @@ module.exports = {
         filename: '[name].js'
     },
     //SourceMap配置
-    devtool: 'cheap-module-eval-source-map',
+    // devtool: 'cheap-module-eval-source-map',
+    devtool: 'source-map',
     //require引用路径配置
     resolve: {
         extensions: ['', '.js', '.jsx']
@@ -40,7 +41,7 @@ module.exports = {
             },
             //font加载器
             {
-                test: /\.(woff|svg|eot|ttf)$/,
+                test: /\.(woff[2]?|svg|eot|ttf)$/,
                 loader: 'url?limit=10240&name=assets/fonts/[name].[hash:5].[ext]'
             },
             //css加载器
