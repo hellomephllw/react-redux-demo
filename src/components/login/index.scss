@@ -1,4 +1,3 @@
-@import '../../common/css/normalize.css';
 @import '../../common/css/variables';
 @import '../../common/css/utilities';
 
@@ -6,8 +5,6 @@
 @import '../../common/css/bootstrap-theme.css';
 
 body {
-    font: #{$fontSizeDefault}/#{$lineHeightRatio} $fontFamily;
-    color: #000;
     background: #000;
 }
 

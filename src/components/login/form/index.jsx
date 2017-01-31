@@ -3,7 +3,7 @@
  */
 'use strict';
 import React from 'react';
-import {Form, FormGroup, ControlLabel, FormControl, Col, Checkbox, Button} from 'react-bootstrap';
+import {Form, FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap';
 import './index.scss';
 
 class FormCpn extends React.Component {
