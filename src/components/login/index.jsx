@@ -13,6 +13,7 @@ class LoginContainer extends React.Component {
 
     constructor() {
         super();
+        this.loginHandler = this.loginHandler.bind(this);
     }
 
     loginHandler(username, password) {
@@ -20,7 +21,6 @@ class LoginContainer extends React.Component {
     }
 
     render() {
-        console.log('render~~~~');
         let formProps = {
             success: this.props.success,
             isLogining: this.props.isLogining,
@@ -29,7 +29,7 @@ class LoginContainer extends React.Component {
 
         return (
             <div style={{height: this.props.windowHeight, width: this.props.windowWidth}} className="login">
-                <FormCpn loginHandler={(username, password) => this.loginHandler(username, password)} {...formProps} />
+                <FormCpn loginHandler={this.loginHandler} {...formProps} />
                 <FooterCpn />
             </div>
         );

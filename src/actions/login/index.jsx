@@ -17,3 +17,14 @@ export function clickToLoginActionCreator(username, password, clickLoginBtn) {
         clickLoginBtn
     };
 }
+export function nowIsLoginingActionCreator() {
+    return {
+        type: NOW_IS_LOGINING
+    };
+}
+export function loginResultActionCreator(success) {
+    return {
+        type: LOGIN_RESULT,
+        success
+    };
+}

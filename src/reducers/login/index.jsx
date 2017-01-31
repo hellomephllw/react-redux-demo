@@ -11,7 +11,6 @@ const initialState = {
 };
 
 const loginReducer = (state = initialState, action) => {
-    console.log('enter reducer');
     switch (action.type) {
         case loginAction.NOW_IS_LOGINING:
             return {
@@ -26,7 +25,6 @@ const loginReducer = (state = initialState, action) => {
                 isLogining: false
             };
         default:
-            console.log('enter reducer default');
             return state;
     }
 };

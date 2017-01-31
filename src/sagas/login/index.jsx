@@ -7,10 +7,10 @@ import {call, put} from 'redux-saga/effects';
 import * as loginAction from '../../actions/login';
 import ajax from '../../common/lib/ajax';
 
-/**fetch*/
+/**work*/
 function* loginValidator(action) {
     //正在登陆提示
-    yield put({type: loginAction.NOW_IS_LOGINING});
+    yield put(loginAction.nowIsLoginingActionCreator());
 
     yield delay(1000);
     //获取用户信息
@@ -25,10 +25,7 @@ function* loginValidator(action) {
         success = true;
         console.log('登陆成功');
     }
-    yield put({
-        type: loginAction.LOGIN_RESULT,
-        success
-    });
+    yield put(loginAction.loginResultActionCreator(success));
 }
 
 function asyncFetch(params) {
