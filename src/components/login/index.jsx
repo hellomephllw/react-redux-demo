@@ -20,7 +20,12 @@ class LoginContainer extends React.Component {
     }
 
     render() {
-        let formProps = {success: this.props.success, firstTime: this.props.firstTime};
+        console.log('render~~~~');
+        let formProps = {
+            success: this.props.success,
+            isLogining: this.props.isLogining,
+            firstTime: this.props.firstTime
+        };
 
         return (
             <div style={{height: this.props.windowHeight, width: this.props.windowWidth}} className="login">
@@ -36,5 +41,6 @@ export default connect(state => ({
     windowHeight: window.screen.availHeight,
     windowWidth: window.screen.availWidth,
     success: state.loginReducer.success,
+    isLogining: state.loginReducer.isLogining,
     firstTime: state.loginReducer.firstTime
 }))(LoginContainer);

@@ -15,22 +15,23 @@ class FormCpn extends React.Component {
     render() {
         //初始化验证状态
         let validateState = this.props.success ? null : 'error',
-            showWarn = this.props.success ? 'none' : 'block';
+            showWarn = this.props.success ? 'hidden' : 'visible',
+            loginBtnWords = this.props.isLogining ? '正在登陆...' : '登陆';
         //第一次通过
         if (this.props.firstTime) validateState = null;
         //第一次不显示
-        if (this.props.firstTime) showWarn = 'none';
+        if (this.props.firstTime) showWarn = 'hidden';
 
         return (
             <Form className="login-form">
                 <FormGroup bsSize="large" validationState={validateState}>
-                    <ControlLabel style={{display: showWarn}}>账号或密码错误！</ControlLabel>
+                    <ControlLabel style={{visibility: showWarn}}>账号或密码错误！</ControlLabel>
                     <FormControl inputRef={ref => this.usernameEle = ref} type="text" placeholder="账号" />
                 </FormGroup>
                 <FormGroup bsSize="large" validationState={validateState}>
                     <FormControl inputRef={ref => this.passwordEle = ref} type="password" placeholder="密码" />
                 </FormGroup>
-                <Button bsStyle="primary" bsSize="large" block onClick={() => this.clickToLogin()}>登陆</Button>
+                <Button bsStyle="primary" bsSize="large" block onClick={() => this.clickToLogin()}>{loginBtnWords}</Button>
             </Form>
         );
     }
