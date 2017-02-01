@@ -4,6 +4,7 @@
 'use strict';
 import React from 'react';
 import {connect} from 'react-redux';
+import {browserHistory} from 'react-router';
 import {clickToLoginActionCreator} from '../../actions/login';
 import FormCpn from './form';
 import FooterCpn from '../../common/components/footer';
@@ -18,6 +19,15 @@ class LoginContainer extends React.Component {
 
     loginHandler(username, password) {
         this.props.dispatch(clickToLoginActionCreator(username, password, true));
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (nextProps.success) {
+            browserHistory.push('/home');
+            return false;
+        }
+
+        return true;
     }
 
     render() {
