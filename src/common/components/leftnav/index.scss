@@ -12,3 +12,26 @@
 .leftnav-item {
     margin: 10px 0 10px 40px;
 }
+
+.leftnav-link {
+}
+
+.leftnav-link-active {
+    color: #000;
+    &:link {
+        color: #000;
+    }
+    &:visited {
+        text-decoration: none;
+    }
+    &:hover {
+
+    }
+    &:active {
+        text-decoration: none;
+    }
+    &:focus {
+        color: #000;
+        text-decoration: none;
+    }
+}

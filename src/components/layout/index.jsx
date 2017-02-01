@@ -19,7 +19,7 @@ class Layout extends React.Component {
                 <TopNavCpn />
                 <div className="middle" style={{height: wholeHeight, width: wholeWidth}}>
                     <div className="middle-left"><LeftNavCpn /></div>
-                    <div className="middle-main"></div>
+                    <div className="middle-main">{this.props.children}</div>
                 </div>
                 <FooterCpn />
             </div>

@@ -4,7 +4,6 @@
 'use strict';
 import React from 'react';
 import {connect} from 'react-redux';
-
 import './index.scss';
 
 class HomeContainer extends React.Component {
@@ -15,9 +14,7 @@ class HomeContainer extends React.Component {
 
     render() {
         return (
-            <div className="">
-
-            </div>
+            <div className="home"></div>
         );
     }
 
