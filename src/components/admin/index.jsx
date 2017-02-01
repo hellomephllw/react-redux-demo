@@ -4,7 +4,11 @@
 'use strict';
 import React from 'react';
 import {connect} from 'react-redux';
-import {Breadcrumb} from 'react-bootstrap';
+import BreadCrumbCpn from './breadcrumb';
+import ControlAreaCpn from './controlarea';
+import SearchAreaCpn from './searcharea';
+import TableCpn from './table';
+import PaginationCpn from './pagination';
 import './index.scss';
 
 class AdminContainer extends React.Component {
@@ -16,17 +20,11 @@ class AdminContainer extends React.Component {
     render() {
         return (
             <div className="admin">
-                <Breadcrumb>
-                    <Breadcrumb.Item href="#">
-                        Home
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="http://getbootstrap.com/components/#breadcrumbs">
-                        Library
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item active>
-                        Data
-                    </Breadcrumb.Item>
-                </Breadcrumb>
+                <BreadCrumbCpn />
+                <SearchAreaCpn />
+                <ControlAreaCpn />
+                <TableCpn />
+                <PaginationCpn />
             </div>
         );
     }
