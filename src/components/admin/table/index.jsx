@@ -9,20 +9,20 @@ class TableCpn extends React.Component {
 
     constructor() {
         super();
+        this.checkSingleAdmin = this.checkSingleAdmin.bind(this);
+    }
+
+    checkSingleAdmin(event) {
+        let id = event.currentTarget.getAttribute('data-id');
+        this.props.checkSingleAdminHandler(id);
     }
 
     render() {
-        let admins = [
-            {id: 5, username: 'favorittt', name: '张三'},
-            {id: 7, username: 'tracymcgrady', name: '麦迪'},
-            {id: 10, username: 'iverson', name: '艾弗森'},
-            {id: 20, username: 'durant', name: '杜兰特'},
-            {id: 77,username: 'terminal', name: '李四'}
-        ];
-        let adminTrs = admins.map((admin, i) =>
-                <tr key={i}>
+        console.log(this.props.admins);
+        let adminTrs = this.props.admins.map((admin, i) =>
+                <tr key={admin.id} data-id={admin.id} onClick={this.checkSingleAdmin}>
                     <td className="table-checkboxwrap">
-                        <input type="checkbox"/>
+                        <input type="checkbox" defaultChecked={admin.isChecked} />
                     </td>
                     <td>{i + 1}</td>
                     <td>{admin.name}</td>
@@ -36,7 +36,7 @@ class TableCpn extends React.Component {
                     <thead>
                         <tr>
                             <th className="table-checkboxwrap">
-                                <input type="checkbox"/>
+                                <input type="checkbox" defaultChecked={this.props.checkAll}/>
                             </th>
                             <th>序号</th>
                             <th>姓名</th>

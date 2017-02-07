@@ -4,7 +4,9 @@
 'use strict';
 import {combineReducers} from 'redux';
 import loginReducer from './login';
+import adminReducer from './admin';
 
 export default combineReducers({
-    loginReducer
+    loginReducer,
+    adminReducer
 });

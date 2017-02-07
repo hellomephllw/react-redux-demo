@@ -4,33 +4,40 @@
 'use strict';
 import React from 'react';
 import {connect} from 'react-redux';
+import * as adminAction from '../../actions/admin';
 import BreadCrumbCpn from './breadcrumb';
-import ControlAreaCpn from './controlarea';
-import SearchAreaCpn from './searcharea';
-import TableCpn from './table';
-import PaginationCpn from './pagination';
 import './index.scss';
 
 class AdminContainer extends React.Component {
 
     constructor() {
         super();
+        this.checkSingleAdminHandler = this.checkSingleAdminHandler.bind(this);
+    }
+
+    checkSingleAdminHandler(id) {
+        this.props.dispatch(adminAction.checkSingleAdminActionCreator(id));
     }
 
     render() {
+        console.log('render~~~');
         return (
             <div className="admin">
                 <BreadCrumbCpn />
-                <SearchAreaCpn />
-                <ControlAreaCpn />
-                <TableCpn />
-                <PaginationCpn />
+                {React.cloneElement(
+                    this.props.children,
+                    {
+                        admins: this.props.admins,
+                        checkAll: this.props.checkAll,
+                        checkSingleAdminHandler: this.checkSingleAdminHandler
+                    })}
             </div>
         );
     }
 
 }
 
-export default connect(state => ({
-
+export default connect(chunkState => ({
+    admins: chunkState.adminReducer.admins,
+    checkAll: chunkState.adminReducer.checkAll
 }))(AdminContainer);

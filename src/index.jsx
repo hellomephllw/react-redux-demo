@@ -11,6 +11,7 @@ import LoginContainer from './components/login';
 import Layout from './components/layout';
 import HomeContainer from './components/home';
 import AdminContainer from './components/admin';
+import AdminIndexPageCpn from './components/admin/indexpage';
 import './common/css/common.scss';
 
 render(
@@ -20,7 +21,10 @@ render(
             <Route path="home" component={Layout}>
                 <IndexRoute component={HomeContainer} />
                 <Route path="index" component={HomeContainer} />
-                <Route path="admin" component={AdminContainer} />
+                <Route path="admin" component={AdminContainer}>
+                    <IndexRoute component={AdminIndexPageCpn} />
+                    <Route path="index" component={AdminIndexPageCpn} />
+                </Route>
             </Route>
         </Router>
     </Provider>,
