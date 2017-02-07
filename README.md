@@ -16,18 +16,75 @@
 
 ## 二、目录结构
 
+
     react-redux-demo
-      - assets【静态目录，源码的输出目录】
-      - data【数据】
-        - user.json【模拟的登陆用户数据】
-      - src【源码】
-        - 
-      - .babelrc【babel环境配置】
-      - .gitignore【git配置】
-      - README.md【使用说明】
-      - devServer.js【webpack开发服务器】
-      - package.json【npm项目说明】
-      - webpack.config.js【webpack配置】
+     - assets【静态目录，源码的输出目录】
+     - data【数据】
+       - user.json【模拟的登陆用户数据】
+     - src【源码】
+       - actions【redux的action】
+         - admin【管理员的action，与reducer和components目录对应】
+           - index.jsx
+         - login【登陆的action，与reducer和components目录对应】
+           - index.jsx
+       - common【公共文件】
+         - components【公共组件】
+         - css【公共css】
+         - lib【js库】
+         - scripts【公共js】
+       - components【组件】
+         - admin
+           - addpage【新增管理员布局组件】
+             - index.jsx【组件html和js】
+             - index.scss【组件css】
+           - breadcrumb【BreadCrumb组件】
+             - index.jsx
+             - index.scss【组件css】
+           - controlarea【ControlArea组件】
+             - index.jsx
+             - index.scss
+           - indexpage【数据展示布局组件】
+             - index.jsx
+             - index.scss
+           - pagination【Pagination组件】
+             - index.jsx
+             - index.scss
+           - searcharea【SearchArea组件】
+             - index.jsx
+             - index.scss
+           - table【Table组件】
+             - index.jsx
+             - index.scss
+           - index.jsx【AdminContainer组件】
+           - index.scss【AdminContainer组件的css】
+         - home【首页container组件】
+           - index.jsx【组件html和js】
+           - index.scss【组件css】
+         - layout【布局】
+         - login
+           - form【Form组件】
+           - index.jsx【LoginContainer组件】
+           - index.scss【LoginContainer组件的css】
+       - fonts【服务器端字体】
+       - images【图片】
+       - reducers【redux的reducer】
+         - admin
+            - index.jsx
+         - login
+            - index.jsx
+         - index.jsx【所有reducer整合汇总】
+       - sagas【redux-saga，处理异步action】
+         - login【login的异步处理】
+         - index.jsx【所有sage整合汇总】
+       - index.html【入口html】
+       - index.jsx【入口js】
+       - store.jsx【redux的store】
+     - .babelrc【babel环境配置】
+     - .gitignore【git配置】
+     - README.md【说明】
+     - devServer.js【webpack开发服务器】
+     - package.json【npm项目说明】
+     - webpack.config.js【webpack配置】
 
 
 ## 三、安装与启动
